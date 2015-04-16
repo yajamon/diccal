@@ -7,7 +7,12 @@ wrap = require 'gulp-wrap'
 declare = require 'gulp-declare'
 
 # main task
-gulp.task 'build',['build-assets', 'build-typescript', 'build-bower-components']
+gulp.task 'build',[
+  'build-assets',
+  'build-typescript',
+  'build-bower-components',
+  'build-templates',
+]
 
 gulp.task 'default',['build']
 
@@ -31,5 +36,16 @@ gulp.task 'build-typescript',->
 
 gulp.task 'build-bower-components',->
   bowerFiles()
-    .pipe concat 'venders.js'
+    .pipe concat 'vendors.js'
+    .pipe gulp.dest './dest/js/'
+
+gulp.task 'build-templates',->
+  gulp.src './src/tpl/*.hbs'
+    .pipe handlebars()
+    .pipe wrap 'Handlebars.template(<%= contents %>)'
+    .pipe declare {
+      namespace: 'Diccal.templates',
+      noRedeclare: true,
+    }
+    .pipe concat 'templates.js'
     .pipe gulp.dest './dest/js/'
