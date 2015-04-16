@@ -1,9 +1,11 @@
 gulp = require 'gulp'
 concat = require 'gulp-concat'
 tsc = require 'gulp-typescript'
+bowerFiles = require 'gulp-bower-files'
+
 
 # main task
-gulp.task 'build',['build-assets', 'build-typescript']
+gulp.task 'build',['build-assets', 'build-typescript', 'build-bower-components']
 
 gulp.task 'default',['build']
 
@@ -25,3 +27,7 @@ gulp.task 'build-typescript',->
     .pipe concat 'app.js'
     .pipe gulp.dest './dest/js/'
 
+gulp.task 'build-bower-components',->
+  bowerFiles()
+    .pipe concat 'venders.js'
+    .pipe gulp.dest './dest/js/'
