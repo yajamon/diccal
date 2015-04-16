@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/yajamon/diccal/issues"
   },
-  "homepage": "https://github.com/yajamon/diccal"
+  "homepage": "https://github.com/yajamon/diccal",
+  "devDependencies": {
+    "coffee-script": "^1.9.2",
+    "gulp": "^3.8.11"
+  }
 }
