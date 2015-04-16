@@ -1,0 +1,19 @@
+{
+  "name": "diccal",
+  "version": "0.0.1",
+  "description": "This chrome extention. display calibration tool.",
+  "main": "gulpfile.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://yajamon@github.com/yajamon/diccal.git"
+  },
+  "author": "yajamon <yajamon.tatsuki@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yajamon/diccal/issues"
+  },
+  "homepage": "https://github.com/yajamon/diccal"
+}
