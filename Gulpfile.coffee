@@ -2,7 +2,9 @@ gulp = require 'gulp'
 concat = require 'gulp-concat'
 tsc = require 'gulp-typescript'
 bowerFiles = require 'gulp-bower-files'
-
+handlebars = require 'gulp-handlebars'
+wrap = require 'gulp-wrap'
+declare = require 'gulp-declare'
 
 # main task
 gulp.task 'build',['build-assets', 'build-typescript', 'build-bower-components']
