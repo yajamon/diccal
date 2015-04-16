@@ -11,7 +11,7 @@ gulp.task 'default',['build']
 
 # sub task
 gulp.task 'build-assets',->
-  gulp.src './assets/*'
+  gulp.src './assets/**/*.*'
     .pipe gulp.dest './dest/'
 
 gulp.task 'build-typescript',->

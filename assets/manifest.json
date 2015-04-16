@@ -8,6 +8,6 @@
             "19": "icons/icon19.png"
         },
         "default_title": "diccal",
-        "default_popup": "popup.html"
+        "default_popup": "html/popup.html"
     }
 }
