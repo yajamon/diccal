@@ -8,7 +8,7 @@ module Diccal {
             var result:string|JQuery = null;
             var messageTpl = new Diccal.Template("popup/message");
 
-            messageTpl.set("value", "hello world");
+            messageTpl.set("value", "hello Diccal");
             result = messageTpl.render();
             return result;
         }

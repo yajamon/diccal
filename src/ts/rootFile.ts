@@ -4,6 +4,6 @@
 /// <reference path="./lib/core/Template.ts" />
 /// <reference path="./lib/core/View.ts" />
 
-/// <reference path="./views/Template.ts" />
-/// <reference path="./views/popup/popupView.ts" />
+/// <reference path="./view/Template.ts" />
+/// <reference path="./view/popup/popupView.ts" />
 
