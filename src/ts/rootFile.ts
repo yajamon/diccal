@@ -2,6 +2,7 @@
 /// <reference path="./definitelyTyped/jquery.d.ts" />
 /// <reference path="./definitelyTyped/MediaStream.d.ts" />
 /// <reference path="./definitelyTyped/chrome.d.ts" />
+/// <reference path="./definitelyTyped/promise.d.ts" />
 
 /// <reference path="./lib/core/Template.ts" />
 /// <reference path="./lib/core/View.ts" />
