@@ -6,7 +6,8 @@
   "scripts": {
     "test": "testem ci",
     "install": "bower install",
-    "build": "gulp build"
+    "build": "gulp build",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
