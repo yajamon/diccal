@@ -5,6 +5,7 @@ bowerFiles = require 'gulp-bower-files'
 handlebars = require 'gulp-handlebars'
 wrap = require 'gulp-wrap'
 declare = require 'gulp-declare'
+path = require 'path'
 
 # main task
 gulp.task 'build',[
@@ -51,6 +52,8 @@ gulp.task 'build-templates',->
     .pipe declare {
       namespace: 'Diccal.templates',
       noRedeclare: true,
+      processName: (filePath) ->
+        declare.processNameByPath filePath.replace 'src'+path.sep+'tpl'+path.sep,''
     }
     .pipe concat 'templates.js'
     .pipe gulp.dest './dest/js/'
