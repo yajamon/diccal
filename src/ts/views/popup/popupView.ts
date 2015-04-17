@@ -4,7 +4,7 @@ module Diccal {
         constructor() {
         }
 
-        public render() : string {
+        public render() : string|JQuery {
             var messageTpl = new Diccal.Template("popup/message");
 
             messageTpl.set("value", "hello world");

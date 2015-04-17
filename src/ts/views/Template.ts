@@ -5,5 +5,9 @@ module Diccal {
             var namespacePath:string = "Diccal/templates";
             super(templatePath, namespacePath);
         }
+
+        public $render() : JQuery {
+            return $(this.render());
+        }
     }
 }
