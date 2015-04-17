@@ -5,6 +5,7 @@
   "main": "gulpfile.coffee",
   "scripts": {
     "test": "testem ci",
+    "install": "bower install",
     "build": "gulp build"
   },
   "repository": {
