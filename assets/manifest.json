@@ -9,5 +9,7 @@
         },
         "default_title": "diccal",
         "default_popup": "html/popup.html"
-    }
+    },
+
+    "permissions": ["tabs"]
 }
