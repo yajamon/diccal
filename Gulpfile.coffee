@@ -45,7 +45,7 @@ gulp.task 'build-bower-components',->
     .pipe gulp.dest './dest/js/'
 
 gulp.task 'build-templates',->
-  gulp.src './src/tpl/*.hbs'
+  gulp.src './src/tpl/**/*.hbs'
     .pipe handlebars()
     .pipe wrap 'Handlebars.template(<%= contents %>)'
     .pipe declare {
