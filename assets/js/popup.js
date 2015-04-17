@@ -1,6 +1,5 @@
 $(function() {
     var popupView = new Diccal.PopupView();
-    $('#wrapper').append(
-        popupView.render()
-    );
+
+    popupView.render($('#wrapper'));
 });

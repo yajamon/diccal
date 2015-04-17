@@ -4,13 +4,13 @@ module Diccal {
         constructor() {
         }
 
-        public render() : string|JQuery {
+        public render($target:JQuery) : void {
             var result:string|JQuery = null;
             var messageTpl = new Diccal.Template("popup/message");
 
             messageTpl.set("value", "hello Diccal");
             result = messageTpl.render();
-            return result;
+            $target.append(result);
         }
     }
 }

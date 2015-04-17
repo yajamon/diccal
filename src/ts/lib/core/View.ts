@@ -1,6 +1,6 @@
 module Diccal.Core {
 
     export interface View {
-        render : ()=>string|JQuery;
+        render : (target:JQuery)=>void;
     }
 }
