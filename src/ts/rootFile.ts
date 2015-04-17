@@ -4,6 +4,8 @@
 /// <reference path="./definitelyTyped/chrome.d.ts" />
 /// <reference path="./definitelyTyped/promise.d.ts" />
 
+/// <reference path="./util/queryString.ts" />
+
 /// <reference path="./lib/core/Template.ts" />
 /// <reference path="./lib/core/View.ts" />
 
