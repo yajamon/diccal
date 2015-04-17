@@ -5,10 +5,12 @@ module Diccal {
         }
 
         public render() : string|JQuery {
+            var result:string|JQuery = null;
             var messageTpl = new Diccal.Template("popup/message");
 
             messageTpl.set("value", "hello world");
-            return messageTpl.render();
+            result = messageTpl.render();
+            return result;
         }
     }
 }
