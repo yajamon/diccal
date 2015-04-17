@@ -20,7 +20,7 @@ gulp.task 'default',['build']
 gulp.task 'watch',['build'],->
   gulp.watch './assets/**/*.*',['build-assets']
   gulp.watch './src/ts/**/*.ts',['build-typescript']
-  gulp.watch './src/tpl/*.hbs',['build-templates']
+  gulp.watch './src/tpl/**/*.hbs',['build-templates']
 
 # sub task
 gulp.task 'build-assets',->
