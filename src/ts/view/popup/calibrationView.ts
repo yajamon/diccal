@@ -33,8 +33,15 @@ module Diccal {
                         "code": script,
                     };
                     chrome.tabs.executeScript(tabId, details, resolve);
-                }).then((result:any)=>{
-                    console.log(result);
+                }).then((results:any)=>{
+                    var result = results.shift();
+                    var informationTpl = new Diccal.Template('calibration/information');
+                    informationTpl.set("left", result["left"]);
+                    informationTpl.set("top", result["top"]);
+                    informationTpl.set("width", result["width"]);
+                    informationTpl.set("height", result["height"]);
+
+                    $target.append(informationTpl.render());
                 });
 
                 //TODO: 出力する
