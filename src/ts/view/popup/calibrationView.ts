@@ -19,7 +19,23 @@ module Diccal {
                 };
                 chrome.tabs.query(queryInfo, resolve);
             }).then((tabs:chrome.tabs.Tab[])=>{
-                //TODO: タブにscriptを流し込む
+                // タブにscriptを流し込む
+                var tabId = tabs[0].id;
+                new Promise( (resolve:(data:any)=>void, reject:(data:any)=>void) => {
+                    var script:string = "var rect = {"
+                        + "    left: window.pageXOffset,"
+                        + "    top:window.pageYOffset,"
+                        + "    width:window.innerWidth,"
+                        + "    height:window.innerHeight"
+                        + "};"
+                        + "rect;"
+                    var details:chrome.tabs.InjectDetails = {
+                        "code": script,
+                    };
+                    chrome.tabs.executeScript(tabId, details, resolve);
+                }).then((result:any)=>{
+                    console.log(result);
+                });
 
                 //TODO: 出力する
                 console.log(tabs);
