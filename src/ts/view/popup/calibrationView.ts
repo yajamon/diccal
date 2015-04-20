@@ -12,6 +12,9 @@ module Diccal {
 
             $target.append('<p>Window ID:'+windowId+'</p>');
 
+            var mainTpl = new Diccal.Template('calibration/main');
+            $target.append(mainTpl.render());
+
             var delay =  1000;
             this.timerId = setInterval( ()=>{
 
@@ -46,8 +49,8 @@ module Diccal {
                         informationTpl.set("width", result["width"]);
                         informationTpl.set("height", result["height"]);
 
-                        $target.find(".information").remove();
-                        $target.append(informationTpl.render());
+                        $target.find(".information").empty();
+                        $target.find(".information").append(informationTpl.render());
                     }).catch((err:any)=>{
                         console.log(err);
                         clearInterval(this.timerId);
