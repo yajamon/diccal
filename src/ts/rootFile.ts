@@ -11,4 +11,5 @@
 
 /// <reference path="./view/Template.ts" />
 /// <reference path="./view/popup/popupView.ts" />
+/// <reference path="./view/popup/calibrationView.ts" />
 
