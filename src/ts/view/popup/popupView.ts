@@ -22,5 +22,16 @@ module Diccal {
                 $target.append(windowsTpl.render());
             });
         }
+
+        public openCalibration($target:JQuery) : void {
+            var windowId:string = $target.find('.windowId').text();
+            var prms = new Promise( (resolve:(data:any)=>void, reject:(data:any)=>void)=>{
+                var option :chrome.windows.CreateData = {
+                    url : chrome.extension.getURL("/")+"html/calibration.html"+"?windowId="+windowId,
+                    type: "popup"
+                };
+                chrome.windows.create(option, resolve);
+            });
+        }
     }
 }

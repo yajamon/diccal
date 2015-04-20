@@ -1,10 +1,10 @@
 living Windows
 {{#each windows}}
-    <div>
-        id: <span>{{id}}</span>
-        <ul>
+    <div class="window">
+        <h4 class="displayWindowId">Winodow id: <span class="windowId">{{id}}</span></h4>
+        <ul class="tabs">
             {{#each tabs}}
-                <li>{{title}}</li>
+                <li class="tab">{{title}}</li>
             {{/each}}
         </ul>
     </div>
