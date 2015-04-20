@@ -1,8 +1,7 @@
 $(function() {
     var $wrapper = $('#wrapper');
+    var calibrationView = new Diccal.CalibrationView();
 
-    var util = Diccal.Util;
-    var param = util.parseQueryString(util.getQueryString());
+    calibrationView.render($wrapper);
 
-    $wrapper.append('<p>Window ID:'+param['windowId']+'</p>');
 });
