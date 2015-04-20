@@ -48,9 +48,16 @@ module Diccal {
 
                         $target.find(".information").remove();
                         $target.append(informationTpl.render());
+                    }).catch((err:any)=>{
+                        console.log(err);
+                        clearInterval(this.timerId);
+                        $target.append("<p class='error'>Trackingが解除されました</p>");
                     });
+                }).catch((err:any)=>{
+                    console.log(err);
+                    clearInterval(this.timerId);
+                    $target.append("<p class='error'>Trackingが解除されました</p>");
                 });
-
             }, delay);
         }
     }
