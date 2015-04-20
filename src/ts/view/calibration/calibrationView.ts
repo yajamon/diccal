@@ -8,7 +8,7 @@ module Diccal {
         public render($target:JQuery) : void {
             var util = Diccal.Util;
 
-            var windowId = util.getQueryString();
+            var windowId = util.getWindowIdByQueryString();
 
             $target.append('<p>Window ID:'+windowId+'</p>');
 
