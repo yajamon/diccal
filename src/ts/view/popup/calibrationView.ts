@@ -11,6 +11,7 @@ module Diccal {
 
             $target.append('<p>Window ID:'+windowId+'</p>');
 
+            // TODO: refactoring
             // windowIdのアクティブなタブを取得
             new Promise( (resolve:(data:any)=>void, reject:(data:any)=>void) => {
                 var queryInfo:chrome.tabs.QueryInfo = {
@@ -43,12 +44,7 @@ module Diccal {
 
                     $target.append(informationTpl.render());
                 });
-
-                //TODO: 出力する
-                console.log(tabs);
             });
-
-
         }
     }
 }
