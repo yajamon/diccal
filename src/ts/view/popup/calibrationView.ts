@@ -30,8 +30,8 @@ module Diccal {
                         var script:string = "var rect = {"
                             + "    left: window.pageXOffset,"
                             + "    top:window.pageYOffset,"
-                            + "    width:window.innerWidth,"
-                            + "    height:window.innerHeight"
+                            + "    width:window.document.documentElement.clientWidth,"
+                            + "    height:window.document.documentElement.clientHeight"
                             + "};"
                             + "rect;"
                         var details:chrome.tabs.InjectDetails = {
