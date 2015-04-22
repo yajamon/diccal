@@ -64,5 +64,10 @@ module Diccal {
                 tab.contentScrollDown();
             });
         }
+        public scrollUp() : void {
+            this.actionAtActiveTab((tab:Diccal.Tab)=>{
+                tab.contentScrollUp();
+            });
+        }
     }
 }

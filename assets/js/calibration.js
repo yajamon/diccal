@@ -44,5 +44,10 @@ $(function() {
         /* Act on the event */
         windowManager.scrollDown();
     });
+    $wrapper.on('click', '.up', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        windowManager.scrollUp();
+    });
 
 });
