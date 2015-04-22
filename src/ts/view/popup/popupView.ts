@@ -28,7 +28,9 @@ module Diccal {
             var prms = new Promise( (resolve:(data:any)=>void, reject:(data:any)=>void)=>{
                 var option :chrome.windows.CreateData = {
                     url : chrome.extension.getURL("/")+"html/calibration.html"+"?windowId="+windowId,
-                    type: "popup"
+                    type: "popup",
+                    width: 400,
+                    height: 600
                 };
                 chrome.windows.create(option, resolve);
             });
