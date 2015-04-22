@@ -29,5 +29,9 @@ module Diccal {
              var script = 'window.scrollBy('+left+','+top+');';
              this.executeScript(script, ()=>{});
          }
+
+         public scrollLeft() : void {
+             this.scrollBy(-1, 0);
+         }
     }
 }
