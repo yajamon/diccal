@@ -23,8 +23,7 @@ module Diccal {
             this.action( (Window:chrome.windows.Window) => {
                 var updateInfo :chrome.windows.UpdateInfo = {
                     width : (--Window.width)
-                }
-
+                };
                 this.update(updateInfo);
             });
         }
@@ -33,8 +32,7 @@ module Diccal {
             this.action( (Window:chrome.windows.Window) => {
                 var updateInfo :chrome.windows.UpdateInfo = {
                     width : (++Window.width)
-                }
-
+                };
                 this.update(updateInfo);
             });
         }
@@ -43,7 +41,7 @@ module Diccal {
             this.action( (Window:chrome.windows.Window) => {
                 var updateInfo :chrome.windows.UpdateInfo = {
                     height : (--Window.height)
-                }
+                };
                 this.update(updateInfo);
             });
         }
