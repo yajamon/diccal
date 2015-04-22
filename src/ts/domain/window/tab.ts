@@ -33,5 +33,8 @@ module Diccal {
          public contentScrollLeft(distance:number = 1) : void {
              this.scrollBy(distance, 0);
          }
+         public contentScrollRight(distance:number = -1) : void {
+             this.scrollBy(distance, 0);
+         }
     }
 }
