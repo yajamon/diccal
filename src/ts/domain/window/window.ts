@@ -12,6 +12,13 @@ module Diccal {
 
         }
 
+        public update(updateInfo:chrome.windows.UpdateInfo, callback:(Window:chrome.windows.Window)=>void = ()=>{}) : void {
+
+            new Promise((resolve:(data:any)=>void, reject:(data:any)=>void) => {
+                chrome.windows.update(this.windowId, updateInfo, resolve);
+            }).then(callback);
+        }
+
         public compressWidth() : void {
             this.action( (Window:chrome.windows.Window) => {
                 var updateInfo :chrome.windows.UpdateInfo = {
