@@ -39,5 +39,10 @@ $(function() {
         /* Act on the event */
         windowManager.scrollRight();
     });
+    $wrapper.on('click', '.down', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        windowManager.scrollDown();
+    });
 
 });
