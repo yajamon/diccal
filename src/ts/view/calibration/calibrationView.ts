@@ -7,13 +7,17 @@ module Diccal {
 
         public render($target:JQuery) : void {
             var util = Diccal.Util;
-            var param = util.parseQueryString(util.getQueryString());
-            var windowId = parseInt(param["windowId"], 10);
+
+            var windowId = util.getWindowIdByQueryString();
 
             $target.append('<p>Window ID:'+windowId+'</p>');
 
             var mainTpl = new Diccal.Template('calibration/main');
             $target.append(mainTpl.render());
+
+            // 操作盤
+            var manipurationTpl = new Diccal.Template('calibration/manipuration');
+            $target.find(".manipuration").append(manipurationTpl.render());
 
             var delay =  1000;
             this.timerId = setInterval( ()=>{

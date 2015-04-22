@@ -17,4 +17,10 @@ module Diccal.Util {
         }
         return params;
     }
+    export function getWindowIdByQueryString ():number {
+        var queryString = getQueryString();
+        var param = parseQueryString(queryString);
+        var windowId = parseInt(param["windowId"], 10);
+        return windowId;
+    }
 }
