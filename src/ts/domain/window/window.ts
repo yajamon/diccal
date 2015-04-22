@@ -12,6 +12,10 @@ module Diccal {
 
         }
 
+        public actionAtActiveTab(callback:(tab:Diccal.Tab)=>void) : void {
+            Diccal.Tab.actionAtActiveInWindow(this.windowId, callback);
+        }
+
         public update(updateInfo:chrome.windows.UpdateInfo, callback:(Window:chrome.windows.Window)=>void = ()=>{}) : void {
 
             new Promise((resolve:(data:any)=>void, reject:(data:any)=>void) => {
