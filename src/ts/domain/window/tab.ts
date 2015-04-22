@@ -30,8 +30,8 @@ module Diccal {
              this.executeScript(script, ()=>{});
          }
 
-         public scrollLeft() : void {
-             this.scrollBy(-1, 0);
+         public contentScrollLeft() : void {
+             this.scrollBy(1, 0);
          }
     }
 }

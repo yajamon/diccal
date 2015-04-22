@@ -51,7 +51,7 @@ module Diccal {
 
         public scrollLeft() : void {
             this.actionAtActiveTab((tab:Diccal.Tab)=>{
-                tab.scrollLeft();
+                tab.contentScrollLeft();
             });
         }
     }
