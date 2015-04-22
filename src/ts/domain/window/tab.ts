@@ -24,5 +24,10 @@ module Diccal {
                 chrome.tabs.executeScript(this.tabId, details, resolve);
             }).then(callback);
          }
+
+         public scrollBy(left:number, top:number) : void {
+             var script = 'window.scrollBy('+left+','+top+');';
+             this.executeScript(script, ()=>{});
+         }
     }
 }
