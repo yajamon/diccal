@@ -4,6 +4,14 @@ module Diccal {
         constructor(private windowId:number) {
         }
 
+        public action(callback :(Window:chrome.windows.Window)=>void) : void {
+
+            new Promise( (resolve:(data:any)=>void, reject:(data:any)=>void) => {
+                chrome.windows.get(this.windowId, resolve);
+            }).then(callback);
+
+        }
+
         public compressWidth() : void {
             new Promise( (resolve:(data:any)=>void, reject:(data:any)=>void) => {
                 chrome.windows.get(this.windowId, resolve);
