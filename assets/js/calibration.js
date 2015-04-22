@@ -29,4 +29,25 @@ $(function() {
         windowManager.expandHeight();
     });
 
+    $wrapper.on('click', '.left', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        windowManager.scrollLeft();
+    });
+    $wrapper.on('click', '.right', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        windowManager.scrollRight();
+    });
+    $wrapper.on('click', '.down', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        windowManager.scrollDown();
+    });
+    $wrapper.on('click', '.up', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        windowManager.scrollUp();
+    });
+
 });

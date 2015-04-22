@@ -12,6 +12,10 @@ module Diccal {
 
         }
 
+        public actionAtActiveTab(callback:(tab:Diccal.Tab)=>void) : void {
+            Diccal.Tab.actionAtActiveInWindow(this.windowId, callback);
+        }
+
         public update(updateInfo:chrome.windows.UpdateInfo, callback:(Window:chrome.windows.Window)=>void = ()=>{}) : void {
 
             new Promise((resolve:(data:any)=>void, reject:(data:any)=>void) => {
@@ -43,6 +47,27 @@ module Diccal {
 
         public expandHeight() : void {
             this.updateSize(0, 1);
+        }
+
+        public scrollLeft() : void {
+            this.actionAtActiveTab((tab:Diccal.Tab)=>{
+                tab.contentScrollLeft();
+            });
+        }
+        public scrollRight() : void {
+            this.actionAtActiveTab((tab:Diccal.Tab)=>{
+                tab.contentScrollRight();
+            });
+        }
+        public scrollDown() : void {
+            this.actionAtActiveTab((tab:Diccal.Tab)=>{
+                tab.contentScrollDown();
+            });
+        }
+        public scrollUp() : void {
+            this.actionAtActiveTab((tab:Diccal.Tab)=>{
+                tab.contentScrollUp();
+            });
         }
     }
 }

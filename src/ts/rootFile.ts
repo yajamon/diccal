@@ -9,6 +9,9 @@
 /// <reference path="./lib/core/Template.ts" />
 /// <reference path="./lib/core/View.ts" />
 
+/// <reference path="./domain/window/tab.ts" />
+/// <reference path="./domain/window/window.ts" />
+
 /// <reference path="./view/Template.ts" />
 /// <reference path="./view/popup/popupView.ts" />
 /// <reference path="./view/calibration/calibrationView.ts" />
