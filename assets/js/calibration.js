@@ -29,4 +29,10 @@ $(function() {
         windowManager.expandHeight();
     });
 
+    $wrapper.on('click', '.left', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        windowManager.scrollLeft();
+    });
+
 });

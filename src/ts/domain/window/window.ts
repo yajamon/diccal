@@ -48,5 +48,11 @@ module Diccal {
         public expandHeight() : void {
             this.updateSize(0, 1);
         }
+
+        public scrollLeft() : void {
+            this.actionAtActiveTab((tab:Diccal.Tab)=>{
+                tab.scrollLeft();
+            });
+        }
     }
 }
