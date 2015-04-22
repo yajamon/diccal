@@ -18,5 +18,10 @@ $(function() {
         /* Act on the event */
         windowManager.expandWidth();
     });
+    $wrapper.on('click', '.compressHeight', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        windowManager.compressHeight();
+    });
 
 });
