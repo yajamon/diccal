@@ -13,5 +13,10 @@ $(function() {
         /* Act on the event */
         windowManager.compressWidth();
     });
+    $wrapper.on('click', '.expandWidth', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        windowManager.expandWidth();
+    });
 
 });
