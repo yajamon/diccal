@@ -23,5 +23,10 @@ $(function() {
         /* Act on the event */
         windowManager.compressHeight();
     });
+    $wrapper.on('click', '.expandHeight', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        windowManager.expandHeight();
+    });
 
 });
