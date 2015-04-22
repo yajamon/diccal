@@ -30,39 +30,19 @@ module Diccal {
         }
 
         public compressWidth() : void {
-            this.action( (Window:chrome.windows.Window) => {
-                var updateInfo :chrome.windows.UpdateInfo = {
-                    width : (--Window.width)
-                };
-                this.update(updateInfo);
-            });
+            this.updateSize(-1, 0);
         }
 
         public expandWidth() : void {
-            this.action( (Window:chrome.windows.Window) => {
-                var updateInfo :chrome.windows.UpdateInfo = {
-                    width : (++Window.width)
-                };
-                this.update(updateInfo);
-            });
+            this.updateSize(1, 0);
         }
 
         public compressHeight() : void {
-            this.action( (Window:chrome.windows.Window) => {
-                var updateInfo :chrome.windows.UpdateInfo = {
-                    height : (--Window.height)
-                };
-                this.update(updateInfo);
-            });
+            this.updateSize(0, -1);
         }
 
         public expandHeight() : void {
-            this.action( (Window:chrome.windows.Window) => {
-                var updateInfo :chrome.windows.UpdateInfo = {
-                    height : (++Window.height)
-                };
-                this.update(updateInfo);
-            });
+            this.updateSize(0, 1);
         }
     }
 }
