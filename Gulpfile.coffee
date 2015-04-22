@@ -32,7 +32,7 @@ gulp.task 'build-typescript',->
     noImplicitAny : true,
     sortOutput: true,
     target: "ES5",
-    sourceRoot: "./src/ts/root.ts"
+    sourceRoot: "./src/ts/rootFile.ts"
   }
   gulp.src './src/ts/**/*.ts'
     .pipe tsc(tsOption)
