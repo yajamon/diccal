@@ -25,10 +25,7 @@ module Diccal {
                     width : (--Window.width)
                 }
 
-                new Promise((resolve:(data:any)=>void, reject:(data:any)=>void) => {
-                    chrome.windows.update(this.windowId, updateInfo, resolve);
-                });
-
+                this.update(updateInfo);
             });
         }
 
