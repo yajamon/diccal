@@ -29,5 +29,15 @@ module Diccal {
             });
         }
 
+        public expandWidth() : void {
+            this.action( (Window:chrome.windows.Window) => {
+                var updateInfo :chrome.windows.UpdateInfo = {
+                    width : (++Window.width)
+                }
+
+                this.update(updateInfo);
+            });
+        }
+
     }
 }
