@@ -19,6 +19,16 @@ module Diccal {
             }).then(callback);
         }
 
+        public updateSize(diffWidth:number, diffHeight:number) : void {
+            this.action( (Window:chrome.windows.Window) => {
+                var updateInfo :chrome.windows.UpdateInfo = {
+                    width : (Window.width + diffWidth),
+                    height : (Window.height + diffHeight),
+                };
+                this.update(updateInfo);
+            });
+        }
+
         public compressWidth() : void {
             this.action( (Window:chrome.windows.Window) => {
                 var updateInfo :chrome.windows.UpdateInfo = {
