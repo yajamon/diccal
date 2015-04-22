@@ -13,9 +13,7 @@ module Diccal {
         }
 
         public compressWidth() : void {
-            new Promise( (resolve:(data:any)=>void, reject:(data:any)=>void) => {
-                chrome.windows.get(this.windowId, resolve);
-            }).then( (Window:chrome.windows.Window) => {
+            this.action( (Window:chrome.windows.Window) => {
                 var updateInfo :chrome.windows.UpdateInfo = {
                     width : (--Window.width)
                 }
