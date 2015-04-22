@@ -39,5 +39,13 @@ module Diccal {
             });
         }
 
+        public compressHeight() : void {
+            this.action( (Window:chrome.windows.Window) => {
+                var updateInfo :chrome.windows.UpdateInfo = {
+                    height : (--Window.height)
+                }
+                this.update(updateInfo);
+            });
+        }
     }
 }
