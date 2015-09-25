@@ -8,13 +8,13 @@ var wrap = require('gulp-wrap');
 var declare = require('gulp-declare');
 var path = require('path');
 
-gulp.task('build', ['build:assets', 'build-typescript', 'build-bower-components', 'build-templates']);
+gulp.task('build', ['build:assets', 'build:typescript', 'build-bower-components', 'build-templates']);
 
 gulp.task('default', ['build']);
 
 gulp.task('watch', ['build'], function() {
   gulp.watch('./assets/**/*.*', ['build:assets']);
-  gulp.watch('./src/ts/**/*.ts', ['build-typescript']);
+  gulp.watch('./src/ts/**/*.ts', ['build:typescript']);
   return gulp.watch('./src/tpl/**/*.hbs', ['build-templates']);
 });
 
@@ -22,7 +22,7 @@ gulp.task('build:assets', function() {
   return gulp.src('./assets/**/*.*').pipe(gulp.dest('./dest/'));
 });
 
-gulp.task('build-typescript', function() {
+gulp.task('build:typescript', function() {
   var tsOption;
   tsOption = {
     noImplicitAny: true,
