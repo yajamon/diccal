@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "out": "built/out.js",
+        "sourceMap": true,
+        "target": "es5",
+        "noImplicitAny" : true
+    },
+    "files": [
+        "src/ts/rootFile.ts"
+    ]
+}
