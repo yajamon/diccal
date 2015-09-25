@@ -8,7 +8,7 @@ var wrap = require('gulp-wrap');
 var declare = require('gulp-declare');
 var path = require('path');
 
-gulp.task('build', ['build:assets', 'build:typescript', 'build-bower-components', 'build-templates']);
+gulp.task('build', ['build:assets', 'build:typescript', 'build:bower:components', 'build-templates']);
 
 gulp.task('default', ['build']);
 
@@ -33,7 +33,7 @@ gulp.task('build:typescript', function() {
   return gulp.src('./src/ts/**/*.ts').pipe(tsc(tsOption)).js.pipe(concat('app.js')).pipe(gulp.dest('./dest/js/'));
 });
 
-gulp.task('build-bower-components', function() {
+gulp.task('build:bower:components', function() {
   return bowerFiles().pipe(concat('vendors.js')).pipe(gulp.dest('./dest/js/'));
 });
 
