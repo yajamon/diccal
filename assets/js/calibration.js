@@ -90,6 +90,18 @@ $(function() {
         /* Act on the event */
         windowManager.expandHeight();
     });
+    $wrapper.on('mousedown', '.expandHeight', function (event) {
+        event.preventDefault();
+        /* Act on the event */
+        setupLongPush(function () {
+            windowManager.expandHeight();
+        });
+    });
+    $wrapper.on('mouseup mouseout', '.expandHeight', function (event) {
+        event.preventDefault();
+        /* Act on the event */
+        releaseLongPush();
+    });
 
 
     $wrapper.on('click', '.left', function(event) {
