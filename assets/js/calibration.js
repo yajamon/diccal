@@ -109,6 +109,18 @@ $(function() {
         /* Act on the event */
         windowManager.scrollLeft();
     });
+    $wrapper.on('mousedown', '.left', function (event) {
+        event.preventDefault();
+        /* Act on the event */
+        setupLongPush(function () {
+            windowManager.scrollLeft();
+        });
+    });
+    $wrapper.on('mouseup mouseout', '.left', function (event) {
+        event.preventDefault();
+        /* Act on the event */
+        releaseLongPush();
+    });
     
     $wrapper.on('click', '.right', function(event) {
         event.preventDefault();
