@@ -2,7 +2,9 @@
     "compilerOptions": {
         "sourceMap": true,
         "target": "es5",
-        "noImplicitAny" : true
+        "noImplicitAny" : true,
+        "module": "commonjs",
+        "removeComments": true
     },
     "files": [
         "src/ts/rootFile.ts"
