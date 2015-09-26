@@ -1,0 +1,23 @@
+{
+  "repos": [
+    {
+      "url": "https://github.com/borisyankov/DefinitelyTyped.git",
+      "ref": "master"
+    }
+  ],
+  "path": "typings",
+  "bundle": "typings/bundle.d.ts",
+  "link": {
+    "npm": {
+      "include": true
+    }
+  },
+  "dependencies": {
+    "gulp/gulp.d.ts": {
+      "ref": "54f064352a3615443f7bff4198078db15e28247b"
+    },
+    "gulp-typescript/gulp-typescript.d.ts": {
+      "ref": "54f064352a3615443f7bff4198078db15e28247b"
+    }
+  }
+}

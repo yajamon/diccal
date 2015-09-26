@@ -29,5 +29,8 @@ node_modules
 # Dependency directory(bower)
 bower_components/
 
+#typings
+typings
+
 # build files
 dest/
