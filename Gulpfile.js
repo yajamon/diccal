@@ -32,7 +32,8 @@ gulp.task('build:typescript', function() {
 });
 
 gulp.task('build:bower:components', function() {
-  return bowerFiles().pipe(concat('vendors.js')).pipe(gulp.dest('./dest/js/'));
+  return gulp.src(["./node_modules/jquery/dist/jquery.js", "./node_modules/handlebars/dist/handlebars.js"])
+    .pipe(concat('vendors.js')).pipe(gulp.dest('./dest/js/'));
 });
 
 gulp.task('build:templates', function() {
