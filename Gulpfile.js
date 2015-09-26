@@ -4,7 +4,6 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var tsc = require('gulp-typescript');
-var bowerFiles = require('gulp-bower-files');
 var handlebars = require('gulp-handlebars');
 var wrap = require('gulp-wrap');
 var declare = require('gulp-declare');
