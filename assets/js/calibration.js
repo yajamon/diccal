@@ -163,5 +163,17 @@ $(function() {
         /* Act on the event */
         windowManager.scrollUp();
     });
+    $wrapper.on('mousedown', '.up', function (event) {
+        event.preventDefault();
+        /* Act on the event */
+        setupLongPush(function () {
+            windowManager.scrollUp();
+        });
+    });
+    $wrapper.on('mouseup mouseout', '.up', function (event) {
+        event.preventDefault();
+        /* Act on the event */
+        releaseLongPush();
+    });
 
 });
