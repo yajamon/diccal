@@ -48,6 +48,7 @@ $(function() {
         /* Act on the event */
         releaseLongPush();
     });
+    
     $wrapper.on('click', '.expandWidth', function(event) {
         event.preventDefault();
         /* Act on the event */
@@ -65,32 +66,38 @@ $(function() {
         /* Act on the event */
         releaseLongPush();
     });
+    
     $wrapper.on('click', '.compressHeight', function(event) {
         event.preventDefault();
         /* Act on the event */
         windowManager.compressHeight();
     });
+    
     $wrapper.on('click', '.expandHeight', function(event) {
         event.preventDefault();
         /* Act on the event */
         windowManager.expandHeight();
     });
 
+
     $wrapper.on('click', '.left', function(event) {
         event.preventDefault();
         /* Act on the event */
         windowManager.scrollLeft();
     });
+    
     $wrapper.on('click', '.right', function(event) {
         event.preventDefault();
         /* Act on the event */
         windowManager.scrollRight();
     });
+    
     $wrapper.on('click', '.down', function(event) {
         event.preventDefault();
         /* Act on the event */
         windowManager.scrollDown();
     });
+    
     $wrapper.on('click', '.up', function(event) {
         event.preventDefault();
         /* Act on the event */
