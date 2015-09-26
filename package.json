@@ -1,6 +1,6 @@
 {
   "name": "diccal",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "This chrome extention. display calibration tool.",
   "main": "gulpfile.js",
   "scripts": {
