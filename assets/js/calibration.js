@@ -16,6 +16,20 @@ $(function() {
         longPushIntervalId = null;
         longPushStartTime = null;
     }
+    function setupLongPush(action) {
+        if (longPushIntervalId) {
+            releaseLongPush();
+        }
+        longPushStartTime = new Date().getTime();
+        longPushIntervalId = setInterval(function () {
+            var now = new Date().getTime();
+            if (now - longPushStartTime < 500) {
+                return;
+            }
+            action();
+        }, 1000/30);
+    }
+
 
     $wrapper.on('click', '.compressWidth', function(event) {
         event.preventDefault();
