@@ -72,6 +72,18 @@ $(function() {
         /* Act on the event */
         windowManager.compressHeight();
     });
+    $wrapper.on('mousedown', '.compressHeight', function (event) {
+        event.preventDefault();
+        /* Act on the event */
+        setupLongPush(function () {
+            windowManager.compressHeight();
+        });
+    });
+    $wrapper.on('mouseup mouseout', '.compressHeight', function (event) {
+        event.preventDefault();
+        /* Act on the event */
+        releaseLongPush();
+    });
     
     $wrapper.on('click', '.expandHeight', function(event) {
         event.preventDefault();
