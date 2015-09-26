@@ -2,7 +2,7 @@
   "name": "diccal",
   "version": "0.0.1",
   "description": "This chrome extention. display calibration tool.",
-  "main": "gulpfile.coffee",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "testem ci",
     "install": "bower install",
