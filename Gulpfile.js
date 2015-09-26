@@ -4,13 +4,12 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var tsc = require('gulp-typescript');
-var bowerFiles = require('gulp-bower-files');
 var handlebars = require('gulp-handlebars');
 var wrap = require('gulp-wrap');
 var declare = require('gulp-declare');
 var path = require('path');
 
-gulp.task('build', ['build:assets', 'build:typescript', 'build:bower:components', 'build:templates']);
+gulp.task('build', ['build:assets', 'build:typescript', 'build:vendor:js', 'build:templates']);
 
 gulp.task('default', ['build']);
 
@@ -31,8 +30,9 @@ gulp.task('build:typescript', function() {
   return tsResult.js.pipe(gulp.dest('./dest/js/'));
 });
 
-gulp.task('build:bower:components', function() {
-  return bowerFiles().pipe(concat('vendors.js')).pipe(gulp.dest('./dest/js/'));
+gulp.task('build:vendor:js', function() {
+  return gulp.src(["./node_modules/jquery/dist/jquery.js", "./node_modules/handlebars/dist/handlebars.js"])
+    .pipe(concat('vendors.js')).pipe(gulp.dest('./dest/js/'));
 });
 
 gulp.task('build:templates', function() {
