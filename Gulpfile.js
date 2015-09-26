@@ -24,15 +24,11 @@ gulp.task('build:assets', function() {
   return gulp.src('./assets/**/*.*').pipe(gulp.dest('./dest/'));
 });
 
+var tsProject = tsc.createProject('tsconfig.json', {out: "app.js"});
 gulp.task('build:typescript', function() {
-  var tsOption;
-  tsOption = {
-    noImplicitAny: true,
-    sortOutput: true,
-    target: "ES5",
-    sourceRoot: "./src/ts/rootFile.ts"
-  };
-  return gulp.src('./src/ts/**/*.ts').pipe(tsc(tsOption)).js.pipe(concat('app.js')).pipe(gulp.dest('./dest/js/'));
+  var tsResult = gulp.src('./src/ts/**/*.ts')
+    .pipe(tsc(tsProject));
+  return tsResult.js.pipe(gulp.dest('./dest/js/'));
 });
 
 gulp.task('build:bower:components', function() {
