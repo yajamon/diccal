@@ -5,7 +5,6 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "testem ci",
-    "install": "bower install",
     "build": "gulp build",
     "watch": "gulp watch"
   },
