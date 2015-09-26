@@ -53,6 +53,18 @@ $(function() {
         /* Act on the event */
         windowManager.expandWidth();
     });
+    $wrapper.on('mousedown', '.expandWidth', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        setupLongPush(function () {
+            windowManager.expandWidth();
+        });
+    });
+    $wrapper.on('mouseup mouseout', '.expandWidth', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        releaseLongPush();
+    });
     $wrapper.on('click', '.compressHeight', function(event) {
         event.preventDefault();
         /* Act on the event */
