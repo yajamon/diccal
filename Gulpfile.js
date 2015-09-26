@@ -10,7 +10,7 @@ var wrap = require('gulp-wrap');
 var declare = require('gulp-declare');
 var path = require('path');
 
-gulp.task('build', ['build:assets', 'build:typescript', 'build:bower:components', 'build:templates']);
+gulp.task('build', ['build:assets', 'build:typescript', 'build:vendor:js', 'build:templates']);
 
 gulp.task('default', ['build']);
 
@@ -31,7 +31,7 @@ gulp.task('build:typescript', function() {
   return tsResult.js.pipe(gulp.dest('./dest/js/'));
 });
 
-gulp.task('build:bower:components', function() {
+gulp.task('build:vendor:js', function() {
   return gulp.src(["./node_modules/jquery/dist/jquery.js", "./node_modules/handlebars/dist/handlebars.js"])
     .pipe(concat('vendors.js')).pipe(gulp.dest('./dest/js/'));
 });
