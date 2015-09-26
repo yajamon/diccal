@@ -11,6 +11,12 @@ $(function() {
     var longPushIntervalId = null;
     var longPushStartTime = null;
 
+    function releaseLongPush() {
+        clearInterval(longPushIntervalId);
+        longPushIntervalId = null;
+        longPushStartTime = null;
+    }
+
     $wrapper.on('click', '.compressWidth', function(event) {
         event.preventDefault();
         /* Act on the event */
@@ -20,9 +26,7 @@ $(function() {
         event.preventDefault();
         /* Act on the event */
         if (longPushIntervalId) {
-            clearInterval(longPushIntervalId);
-            longPushIntervalId = null;
-            longPushStartTime = null;
+            releaseLongPush();
         }
         longPushStartTime = new Date().getTime();
         longPushIntervalId = setInterval(function () {
@@ -36,9 +40,7 @@ $(function() {
     $wrapper.on('mouseup mouseout', '.compressWidth', function(event) {
         event.preventDefault();
         /* Act on the event */
-        clearInterval(longPushIntervalId);
-        longPushIntervalId = null;
-        longPushStartTime = null;
+        releaseLongPush();
     });
     $wrapper.on('click', '.expandWidth', function(event) {
         event.preventDefault();
