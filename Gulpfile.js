@@ -36,11 +36,16 @@ gulp.task('build:vendor:js', function() {
 });
 
 gulp.task('build:templates', function() {
-  return gulp.src('./src/tpl/**/*.hbs').pipe(handlebars()).pipe(wrap('Handlebars.template(<%= contents %>)')).pipe(declare({
-    namespace: 'Diccal.templates',
-    noRedeclare: true,
-    processName: function(filePath) {
-      return declare.processNameByPath(filePath.replace('src' + path.sep + 'tpl' + path.sep, ''));
-    }
-  })).pipe(concat('templates.js')).pipe(gulp.dest('./dest/js/'));
+  return gulp.src('./src/tpl/**/*.hbs')
+    .pipe(handlebars())
+    .pipe(wrap('Handlebars.template(<%= contents %>)'))
+    .pipe(declare({
+      namespace: 'Diccal.templates',
+      noRedeclare: true,
+      processName: function(filePath) {
+        return declare.processNameByPath(filePath.replace('src' + path.sep + 'tpl' + path.sep, ''));
+      }
+    }))
+    .pipe(concat('templates.js'))
+    .pipe(gulp.dest('./dest/js/'));
 });
