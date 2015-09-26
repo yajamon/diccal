@@ -39,17 +39,9 @@ $(function() {
     $wrapper.on('mousedown', '.compressWidth', function(event) {
         event.preventDefault();
         /* Act on the event */
-        if (longPushIntervalId) {
-            releaseLongPush();
-        }
-        longPushStartTime = new Date().getTime();
-        longPushIntervalId = setInterval(function () {
-            var now = new Date().getTime();
-            if (now - longPushStartTime < 500) {
-                return;
-            }
+        setupLongPush(function () {
             windowManager.compressWidth();
-        }, 1000/30);
+        });
     });
     $wrapper.on('mouseup mouseout', '.compressWidth', function(event) {
         event.preventDefault();
